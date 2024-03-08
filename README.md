@@ -45,3 +45,4 @@ The YouTube Ad Skipper is a browser extension designed to streamline your YouTub
 
 ## Credits:
 - The YouTube Ad Skipper was developed by [Your Company Name], with contributions from [Contributor Names].
+>>>>>>> master
