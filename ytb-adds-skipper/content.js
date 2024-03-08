@@ -4,6 +4,10 @@ const hideYoutubeBarElement = () => {
         {
             document.querySelector('.ytp-chrome-bottom').style.opacity == 1 ? document.querySelector('.ytp-chrome-bottom').style.opacity = 0 : document.querySelector('.ytp-chrome-bottom').style.opacity = 1;
             document.querySelector('.ytp-chrome-top').style.opacity == 1 ? document.querySelector('.ytp-chrome-top').style.opacity = 0 : document.querySelector('.ytp-chrome-top').style.opacity = 1;
+
+            const bookmark_btn = document.querySelector('.bookmark-btn');
+            if(bookmark_btn)
+                bookmark_btn.click();
         }
     })
 };
