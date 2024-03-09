@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "YouTube adds skipper",
-  "version": "1.0",
+  "version": "1.1.0",
   "description": "If it is possible to skip add so this extension will skip it almost imediately",
   "icons": {
     "16": "icon.png",
