@@ -10,6 +10,20 @@ const hideYoutubeBarElement = () => {
             if(bookmark_btn)
                 bookmark_btn.click();
         }
+        else if(e.key == 'Escape')
+        {
+            const show_more_btn = document.querySelector("a[title='Show more']");
+            const liked_videos_link = document.querySelector("a[title='Liked videos']");
+
+            if(show_more_btn)
+            {
+                show_more_btn.click()
+                setTimeout(() => liked_videos_link.click(), 500);
+            }
+            else if(liked_videos_link)
+                liked_videos_link.click();
+
+        }
     })
 };
 const skipYoutubeAds = (min_time) => {
