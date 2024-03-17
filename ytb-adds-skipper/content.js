@@ -1,6 +1,29 @@
+import doubleClickEvent from './utils/doubleClick.js';
+import {unBlurVideo, blurVideo} from "./utils/bluring.js";
 
+let lastKeyDownContainer = {lastKeyDown: null};
+let lastVideoStopContainer = {lastVideoStop: 0}
+
+const blurListener = () => blurVideo(lastVideoStopContainer);
+const unBlurListener = () => unBlurVideo(lastVideoStopContainer);
 const hideYoutubeBarElement = () => {
     document.body.addEventListener('keydown', (e) => {
+        if(e.key == 'Shift') {
+            doubleClickEvent(lastKeyDownContainer, () => {
+                let video = document.querySelector('.html5-main-video')
+                if(video.getAttribute('listener') && video.getAttribute('listener') != 'false')
+                {
+                    video.setAttribute('listener', 'false');
+                    video.removeEventListener('pause', blurListener);
+                    video.removeEventListener('play', unBlurListener)
+                }
+                else {
+                    video.addEventListener('pause', blurListener);
+                    video.addEventListener('play', unBlurListener);
+                    video.setAttribute('listener', 'true');
+                }
+            })
+        }
         if(e.key == 'Enter')
         {
             document.querySelector('.ytp-chrome-bottom').style.opacity == 1 ? document.querySelector('.ytp-chrome-bottom').style.opacity = 0 : document.querySelector('.ytp-chrome-bottom').style.opacity = 1;
