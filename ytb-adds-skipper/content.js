@@ -16,6 +16,7 @@ const hideYoutubeBarElement = () => {
                     video.setAttribute('listener', 'false');
                     video.removeEventListener('pause', blurListener);
                     video.removeEventListener('play', unBlurListener)
+                    video.style.filter = 'none';
                 }
                 else {
                     video.addEventListener('pause', blurListener);
