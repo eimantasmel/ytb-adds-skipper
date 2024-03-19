@@ -34,6 +34,7 @@ const hideYoutubeBarElement = () => {
             if(bookmark_btn)
                 bookmark_btn.click();
         }
+<<<<<<< Updated upstream
         else if(e.key == 'Escape')
         {
             const show_more_btn = document.querySelector("a[title='Show more']");
@@ -49,6 +50,15 @@ const hideYoutubeBarElement = () => {
             }
             else if(liked_videos_link)
                 liked_videos_link.click();
+=======
+        else if(e.key == 'Tab')
+        {
+            const search_field = document.querySelector('#search-input input#search')
+            if(search_field)
+            {
+                setTimeout(() => search_field.focus(), 500)
+            }
+>>>>>>> Stashed changes
 
         }
     })
@@ -57,6 +67,9 @@ const skipYoutubeAds = (min_time) => {
     const intervalId = window.setInterval(() => {
         const element = document.querySelector('.ytp-ad-skip-button-text-centered');
         const unskippable_ad_preview = document.querySelector('.ytp-ad-preview-container')
+        const confirm_button = document.getElementById('confirm-button');
+        const confirm_feedback = document.querySelector("#confirm-button .yt-spec-touch-feedback-shape__fill");
+
         if(element)
             element.click();
         else if(unskippable_ad_preview)
@@ -64,6 +77,12 @@ const skipYoutubeAds = (min_time) => {
             const time_of_add = Number(document.querySelector('.ytp-time-duration').innerHTML.split(':')[1]);
             document.getElementsByClassName('video-stream')[0].currentTime = time_of_add;
         }
+        else if(confirm_button && confirm_feedback)
+        {
+            confirm_feedback.click();
+        }
+    }
+
 
         const ytb_play_progresses = document.querySelectorAll('.ytp-play-progress.ytp-swatch-background-color')
         change_color_of_progress_bars(ytb_play_progresses,'deeppink')
