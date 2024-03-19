@@ -81,8 +81,6 @@ const skipYoutubeAds = (min_time) => {
         {
             confirm_feedback.click();
         }
-    }
-
 
         const ytb_play_progresses = document.querySelectorAll('.ytp-play-progress.ytp-swatch-background-color')
         change_color_of_progress_bars(ytb_play_progresses,'deeppink')
