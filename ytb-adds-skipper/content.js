@@ -34,7 +34,6 @@ const hideYoutubeBarElement = () => {
             if(bookmark_btn)
                 bookmark_btn.click();
         }
-<<<<<<< Updated upstream
         else if(e.key == 'Escape')
         {
             const show_more_btn = document.querySelector("a[title='Show more']");
@@ -50,16 +49,6 @@ const hideYoutubeBarElement = () => {
             }
             else if(liked_videos_link)
                 liked_videos_link.click();
-=======
-        else if(e.key == 'Tab')
-        {
-            const search_field = document.querySelector('#search-input input#search')
-            if(search_field)
-            {
-                setTimeout(() => search_field.focus(), 500)
-            }
->>>>>>> Stashed changes
-
         }
     })
 };
