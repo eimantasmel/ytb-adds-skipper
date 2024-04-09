@@ -60,6 +60,8 @@ const skipYoutubeAds = (min_time) => {
       ".ytp-play-progress.ytp-swatch-background-color"
     );
     change_color_of_progress_bars(ytb_play_progresses, "deeppink");
+    const chromeBottom = document.querySelector(".ytp-chrome-bottom");
+    if (chromeBottom) chromeBottom.style.background = "black";
   }, min_time);
 };
 
@@ -73,8 +75,3 @@ const change_color_of_progress_bars = (elements, color) => {
 
 hideYoutubeBarElement();
 skipYoutubeAds(700);
-
-document.addEventListener("DOMContentLoaded", () => {
-  const chromeBottom = document.querySelector(".ytp-chrome-bottom");
-  if (chromeBottom) chromeBottom.style.background = "black";
-});
