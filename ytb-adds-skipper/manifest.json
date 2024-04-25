@@ -4,6 +4,7 @@
   "version": "1.1.1",
   "author": "Eimantas Melnikas",
   "description": "If it is possible to skip add so this extension will skip it almost imediately",
+  "permissions": ["storage"],
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
@@ -14,5 +15,8 @@
       "matches": ["https://*.youtube.com/*"],
       "js": ["./dist/content_bundle.js"]
     }
-  ]
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
 }

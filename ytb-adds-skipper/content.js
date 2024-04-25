@@ -1,6 +1,6 @@
 import doubleClickEvent from "./utils/doubleClick.js";
 import { unBlurVideo, blurVideo } from "./utils/bluring.js";
-
+import nextVideoToggle from "./utils/videoListeners.js";
 let lastKeyDownContainer = { lastKeyDown: null };
 let lastVideoStopContainer = { lastVideoStop: 0 };
 
@@ -75,3 +75,4 @@ const change_color_of_progress_bars = (elements, color) => {
 
 hideYoutubeBarElement();
 skipYoutubeAds(700);
+nextVideoToggle();
