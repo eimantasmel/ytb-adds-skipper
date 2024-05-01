@@ -1,13 +1,18 @@
-import doubleClickEvent from "./utils/doubleClick.js";
 import { unBlurVideo, blurVideo } from "./utils/bluring.js";
+import { getToggleShiftPlay } from "./utils/getStorageData.js";
 import nextVideoToggle from "./utils/videoListeners.js";
 let lastVideoStopContainer = { lastVideoStop: 0 };
 
 const blurListener = () => blurVideo(lastVideoStopContainer);
 const unBlurListener = () => unBlurVideo(lastVideoStopContainer);
 const hideYoutubeBarElement = () => {
-  document.body.addEventListener("keydown", (e) => {
-    if (e.key == "Enter") {
+  document.body.addEventListener("keydown", async (e) => {
+    const playBtn = document.querySelector('.ytp-play-button');
+    const shiftPlay = await getToggleShiftPlay();
+    if(e.key == "Shift" && playBtn && shiftPlay){
+      playBtn.click();
+    }
+    else if (e.key == "Enter") {
       document.querySelector(".ytp-chrome-bottom").style.opacity == 1
         ? (document.querySelector(".ytp-chrome-bottom").style.opacity = 0)
         : (document.querySelector(".ytp-chrome-bottom").style.opacity = 1);
