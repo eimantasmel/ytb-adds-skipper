@@ -1,17 +1,26 @@
-import getToggleVideoValue from "./utils/getToggleVideoValue.js";
+import {getToggleVideoValue, getToggleShiftPlay} from "./utils/getStorageData.js";
 
 document.addEventListener('DOMContentLoaded', async (e) => {
-    const toggle = document.getElementById("toggle");
-    toggle.checked = await getToggleVideoValue();
+    const toggleNext = document.getElementById("toggle_next");
+    toggleNext.checked = await getToggleVideoValue();
+    const toggleShiftPlay = document.getElementById("toggle_shift_play");
+    toggleShiftPlay.checked = await getToggleShiftPlay();
+
     const x = await getToggleVideoValue()
     console.log(x)
-    document.getElementById("toggle").addEventListener("change", function() {
+    document.getElementById("toggle_next").addEventListener("change", function() {
         if (this.checked) {
-            console.log('test')
             chrome.storage.sync.set({['toggle_video']: true})
-            console.log('test2')
         } else {
           chrome.storage.sync.set({['toggle_video']: false})
+        }
+      });
+
+    document.getElementById("toggle_shift_play").addEventListener("change", function() {
+        if (this.checked) {
+            chrome.storage.sync.set({['toggle_shift']: true})
+        } else {
+          chrome.storage.sync.set({['toggle_shift']: false})
         }
       });
 })

@@ -1,4 +1,4 @@
-import getToggleVideoValue from "./getToggleVideoValue.js";
+import {getToggleVideoValue} from "./getStorageData.js";
 
 const nextVideoToggle = () => {
     const video = document.querySelector('video');
