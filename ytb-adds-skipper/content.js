@@ -40,10 +40,10 @@ const hideYoutubeBarElement = () => {
 };
 const skipYoutubeAds = (min_time) => {
   const intervalId = window.setInterval(() => {
-    const element = document.querySelector(".ytp-ad-skip-button-text-centered");
+    const element = document.querySelector("button.ytp-skip-ad-button");
     const unskippable_ad_preview = document.querySelector(
       ".ytp-preview-ad"
-    );
+    )
     const confirm_button = document.getElementById("confirm-button");
     const confirm_feedback = document.querySelector(
       "#confirm-button .yt-spec-touch-feedback-shape__fill"
