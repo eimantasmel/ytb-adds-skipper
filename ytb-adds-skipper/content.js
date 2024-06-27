@@ -42,7 +42,7 @@ const skipYoutubeAds = (min_time) => {
   const intervalId = window.setInterval(() => {
     const element = document.querySelector(".ytp-ad-skip-button-text-centered");
     const unskippable_ad_preview = document.querySelector(
-      ".ytp-ad-preview-container"
+      ".ytp-preview-ad"
     );
     const confirm_button = document.getElementById("confirm-button");
     const confirm_feedback = document.querySelector(
